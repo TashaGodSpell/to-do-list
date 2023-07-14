@@ -10,7 +10,7 @@ export function Input({ isFilled = false, ...props }: ListDataProps) {
     <input
       id="list-data"
       {...props}
-      className={isFilled ? styles.hasData : ""}
-    ></input>
+      className={isFilled ? styles.hasData + ' ' + styles.taskInput : styles.taskInput}
+    />
   );
 }

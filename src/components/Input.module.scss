@@ -1,6 +1,6 @@
 @import '../breakpoints.scss';
 
-input {
+.taskInput {
   max-width: 451px;
   width: 100%;
   padding: 16px;
@@ -15,19 +15,18 @@ input {
 
 
 
-input::-webkit-input-placeholder { /* Edge */
+.taskInput::-webkit-input-placeholder { /* Edge */
   color: var(--gray-300);
 
 }
 
-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.taskInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: var(--gray-300);
 }
 
-input::placeholder {
+.taskInput::placeholder {
   color: var(--gray-300);
 }
-
 .hasData {
     outline: transparent;
     box-shadow: 0 0 0 2px var(--purple-dark);
@@ -35,7 +34,7 @@ input::placeholder {
 
 
 @include break-below(sm) {
-  input {
+  .taskInput {
     
   }
 }

@@ -1,0 +1,25 @@
+.submitButton {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding: 1rem;
+   background: var(--blue-dark);
+   transition: background 0.3s ease;
+   border: none;
+   color: var(--gray-100);
+   font-size: var(--medium);
+   font-weight: 700;
+   line-height: 1.38rem;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+.submitButton:hover {
+    background: var(--blue);
+}
+
+
+.submitButton:disabled {
+    background: var(--gray-400);
+}

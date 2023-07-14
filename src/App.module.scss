@@ -1,19 +1,65 @@
+@import "./breakpoints.scss";
+
 .toDoWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.toDoWrapper header {
+.toDoWrapper > header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
   background-color: var(--gray-700);
   height: 200px;
+  padding: 0 1rem;
 }
 
-.toDoWrapper header form {
+.toDoWrapper > header > form {
   transform: translate(0px, 26px);
   width: 100%;
   justify-content: center;
   display: flex;
-  gap: 16px;
+  gap: 1rem;
+}
+
+.toDoWrapper section {
+  margin-top: 4rem;
+  max-width: 736px;
+  width: 100%;
+  min-height: 287px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+@include break-below(sm) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+
+.pageTitle {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: normal;
+    color: var(--blue);
+    align-items: center;
+    &First {
+        color: var(--blue);
+    }
+
+    &Second {
+        color: var(--purple-dark);
+
+    }
+
+    svg  {
+    margin-right: 0.875rem;
+    }
+
 }
