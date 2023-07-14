@@ -1,6 +1,16 @@
-import { InputHTMLAttributes } from 'react'
-import './Input.module.css'
+import { InputHTMLAttributes } from "react";
+import styles from "./Input.module.scss";
 
-export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
-    return <input {...props}></input>
+interface ListDataProps extends InputHTMLAttributes<HTMLInputElement> {
+  isFilled?: boolean;
+}
+
+export function Input({ isFilled = false, ...props }: ListDataProps) {
+  return (
+    <input
+      id="list-data"
+      {...props}
+      className={isFilled ? styles.hasData : ""}
+    ></input>
+  );
 }

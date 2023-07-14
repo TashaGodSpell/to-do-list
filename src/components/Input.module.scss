@@ -1,0 +1,41 @@
+@import '../breakpoints.scss';
+
+input {
+  max-width: 451px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--gray-500);
+  font-size: var(--big);
+  color: var(--gray-100);
+  line-height: 1.38rem;
+  border-radius: 8px;
+
+  border: none;
+}
+
+
+
+input::-webkit-input-placeholder { /* Edge */
+  color: var(--gray-300);
+
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--gray-300);
+}
+
+input::placeholder {
+  color: var(--gray-300);
+}
+
+.hasData {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
+
+@include break-below(sm) {
+  input {
+    
+  }
+}

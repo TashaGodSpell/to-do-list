@@ -1,0 +1,19 @@
+.toDoWrapper {
+}
+
+.toDoWrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: var(--gray-700);
+  height: 200px;
+}
+
+.toDoWrapper header form {
+  transform: translate(0px, 26px);
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  gap: 16px;
+}
