@@ -2,7 +2,6 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "./App.module.scss";
 import { Input } from "./components/Input";
 import { Submit } from "./components/Submit";
-import { TrashButton } from "./components/TrashButton";
 import { RocketLaunch } from "@phosphor-icons/react";
 import { CheckBox } from "./components/CheckBox";
 
@@ -38,9 +37,11 @@ function App() {
 
   function handleClickTask(item: listItem) {
     let taskListAfterClick = taskList;
-    taskListAfterClick.find((task) => task.id === item.id)!.value = true;
+    let currentValue = taskListAfterClick.find((task) => task.id === item.id)!.value;
 
-    setTaskList(taskListAfterClick);
+    taskListAfterClick.find((task) => task.id === item.id)!.value = !currentValue;
+
+    setTaskList([...taskListAfterClick]);
   }
 
   console.log(taskList);
@@ -67,9 +68,9 @@ function App() {
       </header>
 
       <section>
-        <header></header>
+        <header>teas</header>
 
-        <div>
+        <div className={styles.listContent}>
           {taskList.map((task) => {
             return (
               <div key={task.id}>
@@ -77,7 +78,6 @@ function App() {
                   CheckboxItem={task}
                   onClick={() => handleClickTask(task)}
                 />
-                <TrashButton />
               </div>
             );
           })}
