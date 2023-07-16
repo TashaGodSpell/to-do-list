@@ -29,12 +29,10 @@
   width: 100%;
   min-height: 287px;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
   align-self: center;
-  gap: 25px;
 }
 
 @include break-below(sm) {
@@ -43,7 +41,6 @@
   }
 }
 
-
 .listContent {
   width: 100%;
   display: flex;
@@ -51,26 +48,96 @@
   gap: 16px;
 }
 
-
 .pageTitle {
-    display: flex;
-    flex-direction: row;
-    font-size: 2.5rem;
-    font-weight: 900;
-    line-height: normal;
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: normal;
+  color: var(--blue);
+  align-items: center;
+  &First {
     color: var(--blue);
-    align-items: center;
-    &First {
-        color: var(--blue);
-    }
+  }
 
-    &Second {
-        color: var(--purple-dark);
+  &Second {
+    color: var(--purple-dark);
+  }
 
-    }
-
-    svg  {
+  svg {
     margin-right: 0.875rem;
-    }
+  }
+}
+
+.countHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--medium);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 24px;
+
+  &itemCounter {
+    color: var(--blue);
+  }
+
+  &concludedItem {
+    color: var(--purple);
+  }
+
+
+  &Counter {
+    color: var(--gray-200);
+    font-size: (--small);
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--gray-400);
+  }
+
 
 }
+
+
+
+
+
+
+.countHeader div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.noDataField {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  height: 116px;
+  padding: 64px 24px;
+
+  color: var(--gray-300);
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--big);
+  line-height: 1.38rem;
+
+    border-radius: 8px;
+    border-top: 1px solid var(--gray-400);
+
+  &lastText {
+    font-weight: 400;
+
+  }
+}
+
+
+.noDataField > svg {
+  margin-bottom: 16px;
+} 

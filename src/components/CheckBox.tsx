@@ -6,9 +6,10 @@ import { TrashButton } from "./TrashButton";
 
 interface ICheckbox extends ButtonHTMLAttributes<HTMLButtonElement> {
   CheckboxItem: listItem;
+  onDeleteItem: (item: listItem) => void;
 }
 
-export function CheckBox({ CheckboxItem, ...props }: ICheckbox) {
+export function CheckBox({ CheckboxItem, onDeleteItem, ...props }: ICheckbox) {
   const ref = useRef<HTMLButtonElement>(null);
 
   const handleClick = () => {
@@ -18,7 +19,7 @@ export function CheckBox({ CheckboxItem, ...props }: ICheckbox) {
   };
 
   return (
-    <div className={styles.checkboxContainer} onClick={handleClick}>
+    <div className={styles.checkboxContainer}>
       <button
         ref={ref}
         className={CheckboxItem.value ? styles.selected : styles.notSelected}
@@ -34,13 +35,14 @@ export function CheckBox({ CheckboxItem, ...props }: ICheckbox) {
         </div>
       </button>
       <span
+        onClick={handleClick}
         className={
           CheckboxItem.value ? styles.selectedText : styles.notSelectedText
         }
       >
         {CheckboxItem.label}
       </span>
-      <TrashButton />
+      <TrashButton onClick={() => onDeleteItem(CheckboxItem)} />
     </div>
   );
 }
